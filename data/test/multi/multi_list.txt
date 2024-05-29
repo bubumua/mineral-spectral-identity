@@ -1,0 +1,34 @@
+al100                       Pure Alunite                            
+al10ka90                    10% alunite + 90% Kaolinte              
+al20ka80                    20 Alunite + 80 Kaolin                  
+al40ka60                    40 Alunite + 60 Kaolinte                
+al50ka50                    50 Alunite + 50 Kaolinte, Wrong mixture v
+al60ka40                    60 Alunite + 40 Kaolinte                
+al80ka20                    80 alunite + 20 Kaolin                  
+al90ka10                    90 Alunite + 10 Kaolin                  
+alkaxx                      Unknown mixture of Alunite + Kaolin     
+alpyro2                     Alunite + pyro                          
+alunpyro                    Alunite + pyro                          
+chris1                       A Mixture                              
+chris2a                     PIMA II Plus Test spectra               
+chris2b                     PIMA II Plus Test spectra               
+chris3a                     PIMA II Plus Test spectra               
+chris3b                     PIMA II Plus Test spectra               
+chris4a                     PIMA II Plus Test spectra               
+chris4b                     PIMA II Plus Test spectra               
+chris4c                     PIMA II Plus Test spectra               
+chris5a                     PIMA II Plus Test spectra               
+chris5b                     PIMA II Plus Test spectra               
+chris5c                     PIMA II Plus Test spectra               
+chris6a                     PIMA II Plus Test spectra               
+chris6b                     PIMA II Plus Test spectra               
+chris6c                     PIMA II Plus Test spectra               
+chris7a                     PIMA II Plus Test spectra               
+chris7b                     PIMA II Plus Test spectra               
+dickpyr3                    Dickite + pyro                          
+dickpyr4                    Dickite + pyro                          
+dickpyro                    Dickite + pryo                          
+ka100                       100 % kaolinite                         
+kaolIl2                     Kaolin + illite                         
+kaolIll                     Kaolin + illite                         
+pyroill2                    Pyro + Illite                           

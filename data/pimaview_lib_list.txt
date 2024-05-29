@@ -1,0 +1,77 @@
+ALBITE                      FELDSPAR,ALBITE  JPL/TS-06A  125-500    
+ALUNITE1                    ALUNITE  JPL/SO-04A  125-500 um         
+ALUNITE2                    ALUNITE  JPL/SO-04B  125-500 um         
+ANDESINE                    FELDSPAR,ANDESINE  JPL/TS-04A 125-500   
+ANHYDRIT                    ANHYDRITE  JPL/SO-01A  125-500 um       
+ANORTHIT                    FELDSPAR,ANORTHITE  JPL/TS-05A  45-125  
+ANTIGORI                    antigorite                              
+ANTLERIT                    ANTLERITE  JPL/SO-11A  <45 um           
+AZURITE   Cu3(CO3)2(OH)2    AZURITE  JPL/C-12A  45-125 um           
+BERYL     Be3Al2(Si6O18)    BERYL  JPL/CS-02A  125-500 um           
+BRUCITE                     brucite  197 DEG                        
+CALCITE1  CaCO3             CALCITE  JPL/C-03A  125-500 um          
+CALCITE2  CaCO3             CALCITE  JPL/C-03D  125-500 um          
+CALCITE3  CaCO3             CALCITE  JPL/C-03E  < 45 um             
+CELLULOS  CELLULOSE         cellulose                               
+CERUSSIT  PbCO3             CERUSSITE  JPL/C-10A  125-500 um        
+CHRYSOPR                    QUARTZ,CRYSOPRASE  JPL/TS-01E  125-500 u
+CORDIERI  Mg2Al3(AlSi5O18)  CORDIERITE  JPL/CS-03A  125-500 um      
+DICKITE                     dickite  JPL/PS-03A                     
+DICKITE2                    dickite 4 DEG                           
+DOLOMIT1  CaMg(CO3)2        DOLOMITE  JPL/C-05A  125-500 um         
+DOLOMIT2  CaMg(CO3)2        DOLOMITE  JPL/C-05C  125-500 um         
+EPIDOTE1                    EPIDOTE  JPL/SS-01A  125-500 um         
+EPIDOTE2                    EPIDOTE  JPL/SS-01B  45-125 um          
+EPIDOTE3                    EPIDOTE  JPL/SS-01C  125-500 um         
+GIBBSITE                    gibbsite 198                            
+GLAUCONI                    GLAUCONITE  JPL/PS-19A  <45um           
+GYPSUM1                     GYPSUM  NB  no SO-02A IN REPORT(SO02B??)
+GYPSUM2                     GYPSUM  JPL/SO-02B <45 um               
+GYPSUM3                     GYPSUM  JPL/SO-02C  125-500 um          
+HALLOYSI                    halloysite 172                          
+HEMIMORP                    HEMIMORPHITE  JPL/SS-02A  45-125 um     
+HYDAPOPH                    HYDROXYAPOPHYLLITE  JPL/PS-22A          
+ILLITE                      ILLITE  JPL/PS-11A                      
+ILLITE2                     illite mer13                            
+JAROSIT1                    JAROSITE  JPL/SO-07A  45-125 um         
+JAROSIT2                    jarosite                                
+KAOLINDI  KAOLIN DISORD     kaolinite, disordered  JPL/PS-01B       
+KAOLINOR  KAOLIN OR         kaolinite, well ordered  JPL/PS-01A     
+LABRADOR                    FELDSPAR,LABRADORITE  JPL/TS-02A  125-50
+MAGNESI2                    magnesite                               
+MAGNESIT  MgCO3             MAGNESITE  JPL/C-06A 45-125 um          
+MALACHIT  Cu2CO3(OH)2       MALACHITE  JPL/C-07A  45-125 um         
+MONTMOR2                    MONTMORILLINITE  JPL/PS-02D  <45 um     
+MONTMORI                    montmorillinite  JPL/PS-02B             
+MUSCOVIT                    muscovite 51                            
+NATROJAR                    NATROJAROSITE  JPL/SO-07C               
+NATROLIT                    NATROLITE  JPL/TS-08A  45-125 um        
+NH4ILLIT                    nh4 illite                              
+NONTRON1                    NONTRONITE  JPL/PS-06A ,45 UM           
+NONTRON2                    NONTRONITE  JPL/PS-06B  <45 UM          
+OLIGOCLA                    FELDSPAR,OLIGOCLASE  JPL/TS-03A  125-500 
+PALYGORS                    PALYGORSKITE   JPL/PS-04A               
+PHLOGOPI                    phlogopite                              
+PLUMJARO                    PLUMBOJAROSITE  JPL/SO-07B              
+PREHNITE                    PREHNITE  JPL/21A                       
+PYROPHYL                    pyrophillite 47                         
+RHODOCRO  MnCO3             RHODOCHROSITE  JPL/C-08A  125-500 um    
+SCHEELIT                    SCHEELITE  JPL/T-01A  125-500 um        
+SCORODIT  FeAsO4.2H2O       SCORODITE  JPL/A-02A <45 um             
+SEPIOLIT                    SEPIOLITE  JPL/PS-05A                   
+SERPENTI                    SERPENTINE  JPL/PS20-A                  
+SIDERITE  FeCO3             SIDERITE  JPL/C-09A  125-500 um         
+SMITHSON  ZnCO3             SMITHSONITE  JPL/C-11A 45-125 um        
+SODALITE                    SODALITE  JPL/TS-10A  125-500 um        
+STILBITE                    STILBITE  JPL/TS-09A  <45 um            
+STRONTIA  SrCO3             STRONTIANITE  JPL/C-01A  125-500 um     
+TALC                        talc 56                                 
+TITANITE  CaTiO(SiO4)       TITANITE  JPL/NS-07A  45-125 um         
+TOPAZ     Al2(SiO4)(F,OH)2  TOPAZ  JPL/NS-06A  125-500 um           
+TOURMALI  XY3Al6(BO3)3(Si6O..*)/9>>4/(# !  $%!!"')(''((''((()(()***)(((''%##"$%%$""!!!!!! ""##"!""  !   TOURMALINE  JPL/CS-01A  45-125 um       
+TRONA     Na3H(CO3)2.2H2O   TRONA  JPL/C-04A  <45 um                
+TSCHMERI                    TSCHERMIGITE  JPL/SO-06A  <45 um        
+VESUVIAN                    VESUVIANITE  JPL/SS-03A  45-125 um      
+WATER     WATER             liquid water spectrum                   
+WITHERIT  BaCO3             WITHERITE  JPL/C-02A                    
+ZIRCON    Zr(SiO4)          ZIRCON  JPL/NS-09A 125-500 um           
