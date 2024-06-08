@@ -1,0 +1,1 @@
+Label(window, text="程序加载中，请稍候...", font=("Micros

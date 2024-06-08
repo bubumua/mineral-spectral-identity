@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import scipy.signal
 from scipy.optimize import nnls
+from sklearn.linear_model import Lasso
 
 def simpleoutput(range):
     print('this is a simple python output')
@@ -99,7 +100,7 @@ def demix(mixing_spectrum: pd.DataFrame):
         return [-1]
     else:
         print(f"Found {len(spectrum_lib)} spectra in the library.")
-        return [len(spectrum_lib)]
+        # return [len(spectrum_lib)]
     for mine_name, df in spectrum_lib.items():
         preprocess(df)
     preprocess(mixing_spectrum)
@@ -121,6 +122,70 @@ def demix(mixing_spectrum: pd.DataFrame):
         print(f'{mine_name}: {abundance*100:.2f}%')
     return components
 
+def demix_lasso(mixing_spectrum: pd.DataFrame):
+    mixing_spectrum = pd.DataFrame(mixing_spectrum, columns=['wavelength', 'reflectance'])
+    # 定义数据目录
+    directories = [
+        "./data/library/txt/",
+        "./data/library/csv/",
+        "./data/test/single/txt/",
+        "./data/test/single/csv/",
+        "./data/test/multi/txt/",
+        "./data/test/multi/csv/",
+        "D:/codesaves/python/MineralSpectralAnalysis/src/data/library/"
+        ]
+    spectrum_lib = create_library(directories[1])
+    if len(spectrum_lib) == 0:
+        print("No spectrum library found.")
+        return [-1]
+    else:
+        print(f"Found {len(spectrum_lib)} spectra in the library.")
+        # return [len(spectrum_lib)]
+    
+    for mine_name, df in spectrum_lib.items():
+        preprocess(df)
+    preprocess(mixing_spectrum)
+    
+    X_known, y_unknown = get_matrix(spectrum_lib, mixing_spectrum, 'log')
+    X_known = np.array(X_known).T
+    
+    # 创建LASSO回归模型，并拟合已知光谱端元数据
+    lasso = Lasso(alpha=0.0005, positive=True)
+    lasso.fit(X_known.T, y_unknown)
+    
+    # 获取端元系数（即端元的权重）
+    endmember_coefficients = lasso.coef_
+    
+    # 获得拟合光谱
+    fitted_mixture_spectrum_log_org = np.dot(X_known.T, endmember_coefficients)
+    fitted_mixture_spectrum_org_org=fitted_mixture_spectrum_log_org
+    
+    # 处理端元系数
+    mines=spectrum_lib.keys()
+    
+    # 提取权重大于0的端元
+    endmember_coefficients_less = [(mine_name, coef) for mine_name, coef in zip(mines, endmember_coefficients) if coef > 0]
+    
+    # 对权重进行排序
+    endmember_coefficients_less.sort(key=lambda x: x[1], reverse=True)
+    
+    # 只保留前max_mines个端元
+    endmember_coefficients_less = endmember_coefficients_less[:2]
+    
+    # 归一化权重，使其成为比例 for reporting
+    total = sum([coef for mine_name, coef in endmember_coefficients_less])
+    endmember_coefficients_less = [(mine_name, coef/total) for mine_name, coef in endmember_coefficients_less]
+    
+    # 剔除权重小于min_account的端元
+    endmember_coefficients_less = [(mine_name, coef) for mine_name, coef in endmember_coefficients_less if coef > 0.1]
+    
+    # 归一化权重，使其成为比例 for reporting
+    total = sum([coef for mine_name, coef in endmember_coefficients_less])
+    endmember_coefficients_less = [(mine_name, coef/total) for mine_name, coef in endmember_coefficients_less]
+
+    return endmember_coefficients_less
+
 # 函数测试
-un=pd.read_csv('./data/test/multi/csv/al20ka80.csv')
-demix(un)
+# un=pd.read_csv('./data/test/multi/csv/al20ka80.csv')
+un=pd.read_csv('D:/codesaves/python/MineralSpectralAnalysis/src/data/unknown/al20ka80.csv')
+print(demix_lasso(un))

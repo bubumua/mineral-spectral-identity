@@ -47,7 +47,7 @@ def log_transform(spectrum, attr='reflectance'):
     spectrum['log'] = y_new
     return y_new
 
-def baseline_correction(spectrum:pd.DataFrame, attr='log', win_length=21, p=3)->list:
+def baseline_correction(spectrum:pd.DataFrame, attr='log', win_length=51, p=3)->list:
     """
     Perform baseline correction on the specified attribute of the spectrum DataFrame.
 
@@ -134,7 +134,6 @@ def preprocess(spectrum:pd.DataFrame)->pd.DataFrame:
     log_transform(spectrum)
     baseline_correction(spectrum)
     normalize(spectrum, 'baseline')
-    # denoise(spectrum) 
     return spectrum
 
 def preprocess_library(spectrum_lib:dict)->dict:
@@ -155,7 +154,7 @@ def preprocess_library(spectrum_lib:dict)->dict:
         preprocess(df)
     return spectrum_lib
 
-def get_matrix(spectrum_lib:dict, test_spectrum:pd.DataFrame, attr='log')->tuple:
+def get_matrix(spectrum_lib:dict, test_spectrum:pd.DataFrame, attr='normalized')->tuple:
     """将给定的光谱库和未知光谱转为矩阵输出
 
     Args:
@@ -181,8 +180,7 @@ def get_matrix(spectrum_lib:dict, test_spectrum:pd.DataFrame, attr='log')->tuple
     
     return transposed_array, test_array
 
-
-def unmix_lasso(spectrum_lib:dict,unknown_spectrum:pd.DataFrame,attr='log',alpha=0.0005,max_mines=2,min_account=0.1)->tuple:
+def unmix_lasso(spectrum_lib:dict,unknown_spectrum:pd.DataFrame,attr='normalized',alpha=0.001,max_mines=2,min_account=0.1)->tuple:
     """
     Perform unmixing using LASSO regression on a spectrum library and an unknown spectrum.
 
@@ -255,7 +253,7 @@ def unmix_lasso(spectrum_lib:dict,unknown_spectrum:pd.DataFrame,attr='log',alpha
     
     return endmember_coefficients_less, explained_var, rss, fitted_mixture_spectrum_log
 
-def unmix_ridge(spectrum_lib:dict, unknown_spectrum:pd.DataFrame, attr='log', alpha=0.2, max_mines=2,min_account=0.1)->tuple:
+def unmix_ridge(spectrum_lib:dict, unknown_spectrum:pd.DataFrame, attr='normalized', alpha=0.2, max_mines=2,min_account=0.1)->tuple:
     """
     Perform unmixing using Ridge regression on a spectrum library and an unknown spectrum.
 
@@ -323,7 +321,7 @@ def unmix_ridge(spectrum_lib:dict, unknown_spectrum:pd.DataFrame, attr='log', al
     
     return endmember_coefficients_less, explained_var, rss, fitted_mixture_spectrum
 
-def unmix_linear(spectrum_lib:dict, unknown_spectrum:pd.DataFrame, attr='log', max_mines=2, min_account=0.05)->tuple:
+def unmix_linear(spectrum_lib:dict, unknown_spectrum:pd.DataFrame, attr='normalized', max_mines=2, min_account=0.05)->tuple:
     
     """
     使用线性回归对光谱库和未知光谱进行解混。

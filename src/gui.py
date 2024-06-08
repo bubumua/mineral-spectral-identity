@@ -1,5 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
+
+# 先加载界面框架，内容稍后加载
+window = tk.Tk()
+# 设置窗口名称
+window.title('矿物光谱快速识别')
+# 设置窗口大小、位置
+window.geometry('1000x700+0+0')
+label_loading=ttk.Label(window, text="程序加载中，请稍候...", font=("Microsoft YaHei", 20))
+label_loading.pack(pady=20)
+window.update()
+
 from tkinter import messagebox
 import tkinter.filedialog
 from matplotlib.figure import Figure
@@ -9,11 +20,9 @@ import demix as dm
 # import numpy as np
 # import matplotlib.pyplot as plt
 
-window = tk.Tk()
-# 设置窗口名称
-window.title('矿物光谱快速识别')
-# 设置窗口大小、位置
-window.geometry('1000x700+0+0')
+
+# 删除加载文本
+label_loading.destroy()
 
 ################################################################
 # 1、光谱显示区
@@ -110,7 +119,7 @@ def on_lib_file_select(event):
         print('selected_indices is empty')
         return
     selected_files = []
-     # 遍历索引并获取每个索引对应的文件名
+    # 遍历索引并获取每个索引对应的文件名
     for index in selected_indices:
         filename = listbox_library.get(index)
         mine_name = filename.split(".")[0]
@@ -118,7 +127,7 @@ def on_lib_file_select(event):
     print(selected_files)
     selected_lib_spectra_names = selected_files
     update_lib_spectra(selected_files)
-     
+    
 # 定义文件被点击后的事件处理器
 def on_unknown_file_select(event):
     global multi_lib
@@ -170,7 +179,7 @@ def update_pie(ec:list, mine_name:str):
     # 更新画布引用以便于下一次更新
     canvas_pie = new_canvas
     return
- 
+
 
 #############################################################
 # 4、数据显示区
@@ -365,7 +374,7 @@ def open_settings():
     button_confirm = tk.Button(settings_window, text='确认', command=on_settings_window_close)
     button_confirm.pack()
     print(max_mines, min_account, demix_method)
-       
+    
 def demix():
     global canvas_pie, max_mines, min_account, spectrum_lib, multi_lib, unknown_spectrum, demix_method
     

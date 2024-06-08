@@ -19,3 +19,27 @@
 其他`.ipynb`文件是“实验性”文件，是本软件编写`demix.py`前走过的路。其中`dataprocess.ipynb`是用来从txt文件中提取光谱数据转换为csv文件。
 
 `msa.py`是过程性文件，用来给同学在QT中引用，测试是否能正常使用，没有重要用途。
+
+## 运行该项目
+
+从`src/dist/`目录下找到exe可执行文件即可运行。
+
+程序需要读取的光谱数据文件可以从`src/data/`目录下进行加载。
+
+## 开发该项目
+
+你需要配置你的python环境，本项目的环境配置见msa.yml。你可以使用`conda create -n <new_env_name> -f msa.yml`来使用msa.yml进行环境的创建。
+
+在demix.py文件作为python模块，实现光谱识别的相关算法，其中包括根据读取的光谱文件创建光谱库，预处理，光谱解混等。
+
+在gui.py文件调用了demix.py模块，使用Tkinter框架实现GUI界面。
+
+## 程序截图
+
+![loading](./assets/loading.png)
+
+![main](./assets/main.png)
+
+![setting](./assets/setting.png)
+
+![demix](./assets/demix.png)

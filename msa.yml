@@ -1,0 +1,46 @@
+name: msa
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
+dependencies:
+  - bzip2=1.0.8=h2bbff1b_6
+  - ca-certificates=2024.3.11=haa95532_0
+  - libffi=3.4.4=hd77b12b_1
+  - openssl=3.0.13=h2bbff1b_1
+  - pip=24.0=py311haa95532_0
+  - python=3.11.9=he1021f5_0
+  - setuptools=69.5.1=py311haa95532_0
+  - sqlite=3.45.3=h2bbff1b_0
+  - tk=8.6.14=h0416ee5_0
+  - vc=14.2=h2eaa2aa_1
+  - vs2015_runtime=14.29.30133=h43f2093_3
+  - wheel=0.43.0=py311haa95532_0
+  - xz=5.4.6=h8cc25b3_1
+  - zlib=1.2.13=h8cc25b3_1
+  - pip:
+      - altgraph==0.17.4
+      - contourpy==1.2.1
+      - cycler==0.12.1
+      - fonttools==4.51.0
+      - joblib==1.4.2
+      - kiwisolver==1.4.5
+      - matplotlib==3.9.0
+      - numpy==1.26.4
+      - packaging==24.0
+      - pandas==2.2.2
+      - pefile==2023.2.7
+      - pillow==10.3.0
+      - pyinstaller==6.6.0
+      - pyinstaller-hooks-contrib==2024.6
+      - pyparsing==3.1.2
+      - python-dateutil==2.9.0.post0
+      - pytz==2024.1
+      - pywin32-ctypes==0.2.2
+      - scikit-learn==1.4.2
+      - scipy==1.13.0
+      - six==1.16.0
+      - threadpoolctl==3.5.0
+      - tzdata==2024.1
+prefix: C:\MySoftware\anaconda3\envs\msa
